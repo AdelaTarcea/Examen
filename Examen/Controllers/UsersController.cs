@@ -47,7 +47,8 @@ namespace Examen.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody]RegisterPostModel registerModel)
         {
-           
+
+            registerModel.RegistrationDate = DateTime.Now;
         
             var user = _userService.Register(registerModel);
 

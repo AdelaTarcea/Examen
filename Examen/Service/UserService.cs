@@ -80,7 +80,8 @@ namespace Examen.Service
                 Id = user.Id,
                 Email = user.Email,
                 Username = user.Username,
-                Token = null
+                Token = null,
+                registrationDate=user.RegistrationDate
             });
         }
 
@@ -116,7 +117,7 @@ namespace Examen.Service
                 FirstName = registerInfo.FirstName,
                 Password = ComputeSha256Hash(registerInfo.Password),
                 Username = registerInfo.Username,
-                RegistrationDate= DateTime.Now
+                RegistrationDate = registerInfo.RegistrationDate
                 
         });
             context.SaveChanges();
